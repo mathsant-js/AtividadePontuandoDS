@@ -260,13 +260,28 @@ public class Exerc4 extends javax.swing.JFrame {
             String agenceNumber = agenText.getText();
             String countNumber = countText.getText();
             
-            JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!"
-                                            + "\nNome: " + name
-                                            + "\nEndereço: " + address
-                                            + "\nTelefone: " + tel
-                                            + "\nCPF: " + cpf
-                                            + "\nCódigo da Agência: " + agenceNumber
-                                            + "\nNúmero da Conta: " + countNumber);
+            if (countP.isSelected()) {
+                JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!"
+                                                + "\nNome: " + name
+                                                + "\nEndereço: " + address
+                                                + "\nTelefone: " + tel
+                                                + "\nCPF: " + cpf
+                                                + "\nCódigo da Agência: " + agenceNumber
+                                                + "\nNúmero da Conta: " + countNumber
+                                                + "\nTipo de Conta: " 
+                                                + "\nTipo de Conta: Conta Poupança");
+            }
+            else {
+                JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!"
+                                                + "\nNome: " + name
+                                                + "\nEndereço: " + address
+                                                + "\nTelefone: " + tel
+                                                + "\nCPF: " + cpf
+                                                + "\nCódigo da Agência: " + agenceNumber
+                                                + "\nNúmero da Conta: " + countNumber
+                                                + "\nTipo de Conta: "
+                                                + "\nTipo de Conta: Conta Corrente");
+            }
         } 
     }//GEN-LAST:event_consultActionPerformed
 
