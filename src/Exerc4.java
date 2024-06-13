@@ -212,7 +212,7 @@ public class Exerc4 extends javax.swing.JFrame {
     }//GEN-LAST:event_consultActionPerformed
 
     private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
-        
+        System.exit(0);
     }//GEN-LAST:event_closeActionPerformed
 
     /**
