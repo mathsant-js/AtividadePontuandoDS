@@ -146,6 +146,7 @@
     <Component class="javax.swing.JButton" name="calcular">
       <Properties>
         <Property name="text" type="java.lang.String" value="Calcular"/>
+        <Property name="toolTipText" type="java.lang.String" value="Calcula os n&#xfa;meros com a opera&#xe7;&#xe3;o escolhida"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="calcularActionPerformed"/>
@@ -207,6 +208,7 @@
     <Component class="javax.swing.JButton" name="limpar">
       <Properties>
         <Property name="text" type="java.lang.String" value="Limpar"/>
+        <Property name="toolTipText" type="java.lang.String" value="Limpa os campos digitados"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="limparActionPerformed"/>

@@ -51,6 +51,7 @@ public class Exerc1 extends javax.swing.JFrame {
         jLabel2.setText("N2");
 
         calcular.setText("Calcular");
+        calcular.setToolTipText("Calcula os números com a operação escolhida");
         calcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 calcularActionPerformed(evt);
@@ -82,6 +83,7 @@ public class Exerc1 extends javax.swing.JFrame {
         resulText.setEnabled(false);
 
         limpar.setText("Limpar");
+        limpar.setToolTipText("Limpa os campos digitados");
         limpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 limparActionPerformed(evt);
