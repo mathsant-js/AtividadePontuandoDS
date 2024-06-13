@@ -51,6 +51,7 @@ public class Exerc3 extends javax.swing.JFrame {
         jLabel3.setText("Nome");
 
         limpar.setText("Limpar");
+        limpar.setToolTipText("Limpa os campos digitados");
         limpar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 limparActionPerformed(evt);
@@ -58,6 +59,7 @@ public class Exerc3 extends javax.swing.JFrame {
         });
 
         calcular.setText("Calcular");
+        calcular.setToolTipText("Calcula o seu peso no planeta selecionado");
         calcular.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 calcularActionPerformed(evt);
@@ -131,42 +133,48 @@ public class Exerc3 extends javax.swing.JFrame {
                     result = (weight / 10) * 0.37f;
                     JOptionPane.showMessageDialog(
                             null, name + " o seu peso em " 
-                                        + planetsSelect.getSelectedItem() + " é de " + result + "Kg"
+                                        + planetsSelect.getSelectedItem() + " é de " + result + "Kg",
+                                        "Mercúrio", JOptionPane.INFORMATION_MESSAGE
                     );
                 }
                 else if (planetSelected == 1) {
                     result = (weight / 10) * 0.88f;
                     JOptionPane.showMessageDialog(
                             null, name + " o seu peso em " 
-                                        + planetsSelect.getSelectedItem() + " é de " + result + "Kg"
+                                        + planetsSelect.getSelectedItem() + " é de " + result + "Kg",
+                                        "Vênus", JOptionPane.INFORMATION_MESSAGE
                     );
                 }
                 else if (planetSelected == 2) {
                     result = (weight / 10) * 0.38f;
                     JOptionPane.showMessageDialog(
                             null, name + " o seu peso em " 
-                                        + planetsSelect.getSelectedItem() + " é de " + result + "Kg"
+                                        + planetsSelect.getSelectedItem() + " é de " + result + "Kg",
+                                        "Marte", JOptionPane.INFORMATION_MESSAGE
                     );
                 }
                 else if (planetSelected == 3) {
                     result = (weight / 10) * 2.64f;
                     JOptionPane.showMessageDialog(
                             null, name + " o seu peso em " 
-                                        + planetsSelect.getSelectedItem() + " é de " + result + "Kg"
+                                        + planetsSelect.getSelectedItem() + " é de " + result + "Kg",
+                                        "Júpiter", JOptionPane.INFORMATION_MESSAGE
                     );
                 }
                 else if (planetSelected == 4) {
                     result = (weight / 10) * 1.15f;
                     JOptionPane.showMessageDialog(
                             null, name + " o seu peso em " 
-                                        + planetsSelect.getSelectedItem() + " é de " + result + "Kg"
+                                        + planetsSelect.getSelectedItem() + " é de " + result + "Kg",
+                                        "Saturno", JOptionPane.INFORMATION_MESSAGE
                     );
                 }
                 else if (planetSelected == 5) {
                     result = (weight / 10) * 1.17f;
                     JOptionPane.showMessageDialog(
                             null, name + " o seu peso em " 
-                                        + planetsSelect.getSelectedItem() + " é de " + result + "Kg"
+                                        + planetsSelect.getSelectedItem() + " é de " + result + "Kg",
+                                        "Urano", JOptionPane.INFORMATION_MESSAGE
                     );
                 }
                 
