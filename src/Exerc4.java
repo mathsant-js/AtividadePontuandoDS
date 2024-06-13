@@ -109,6 +109,11 @@ public class Exerc4 extends javax.swing.JFrame {
         }
 
         clean.setText("Limpar");
+        clean.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cleanActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -214,6 +219,17 @@ public class Exerc4 extends javax.swing.JFrame {
     private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
         System.exit(0);
     }//GEN-LAST:event_closeActionPerformed
+
+    private void cleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cleanActionPerformed
+        nameText.setText(null);
+        addresText.setText(null);
+        telText.setText(null);
+        cpfText.setText(null);
+        agenText.setText(null);
+        countText.setText(null);
+        
+        nameText.requestFocus();
+    }//GEN-LAST:event_cleanActionPerformed
 
     /**
      * @param args the command line arguments
