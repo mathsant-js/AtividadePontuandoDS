@@ -36,7 +36,7 @@ public class Exerc4 extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jSeparator1 = new javax.swing.JSeparator();
-        addresText = new javax.swing.JFormattedTextField();
+        addressText = new javax.swing.JFormattedTextField();
         telText = new javax.swing.JFormattedTextField();
         cpfText = new javax.swing.JFormattedTextField();
         countP = new javax.swing.JRadioButton();
@@ -138,7 +138,7 @@ public class Exerc4 extends javax.swing.JFrame {
                                 .addGap(34, 34, 34)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                     .addComponent(telText, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(addresText, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(addressText, javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(nameText)
                                     .addComponent(cpfText)
                                     .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
@@ -183,7 +183,7 @@ public class Exerc4 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(addresText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(addressText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel5)
@@ -220,34 +220,53 @@ public class Exerc4 extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Digite o seu nome", 
                     "Erro", JOptionPane.INFORMATION_MESSAGE
             );
+            nameText.requestFocus();
         } 
-        else if (addresText.getText().intern() == "") {
+        else if (addressText.getText().intern() == "") {
             JOptionPane.showMessageDialog(null, "Digite o seu endereço", 
                     "Erro", JOptionPane.INFORMATION_MESSAGE
             );
+            addressText.requestFocus();
         } 
         else if (telText.getText().intern() == "") {
             JOptionPane.showMessageDialog(null, "Digite o seu telefone", 
                     "Erro", JOptionPane.INFORMATION_MESSAGE
             );
+            telText.requestFocus();
         } 
         else if (cpfText.getText().intern() == "") {
             JOptionPane.showMessageDialog(null, "Digite o seu CPF", 
                     "Erro", JOptionPane.INFORMATION_MESSAGE
             );
+            cpfText.requestFocus();
         } 
         else if (agenText.getText().intern() == "") {
             JOptionPane.showMessageDialog(null, "Digite o código da agência", 
                     "Erro", JOptionPane.INFORMATION_MESSAGE
             );
+            agenText.requestFocus();
         } 
         else if (countText.getText().intern() == "") {
             JOptionPane.showMessageDialog(null, "Digite o seu número da conta", 
                     "Erro", JOptionPane.INFORMATION_MESSAGE
             );
+            countText.requestFocus();
         } 
         else {
+            String name = nameText.getText();
+            String address = addressText.getText();
+            String tel = telText.getText();
+            String cpf = cpfText.getText();
+            String agenceNumber = agenText.getText();
+            String countNumber = countText.getText();
             
+            JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!"
+                                            + "\nNome: " + name
+                                            + "\nEndereço: " + address
+                                            + "\nTelefone: " + tel
+                                            + "\nCPF: " + cpf
+                                            + "\nCódigo da Agência: " + agenceNumber
+                                            + "\nNúmero da Conta: " + countNumber);
         } 
     }//GEN-LAST:event_consultActionPerformed
 
@@ -257,7 +276,7 @@ public class Exerc4 extends javax.swing.JFrame {
 
     private void cleanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cleanActionPerformed
         nameText.setText(null);
-        addresText.setText(null);
+        addressText.setText(null);
         telText.setText(null);
         cpfText.setText(null);
         agenText.setText(null);
@@ -302,7 +321,7 @@ public class Exerc4 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JFormattedTextField addresText;
+    private javax.swing.JFormattedTextField addressText;
     private javax.swing.JFormattedTextField agenText;
     private javax.swing.ButtonGroup buttonGroup;
     private javax.swing.JButton clean;
