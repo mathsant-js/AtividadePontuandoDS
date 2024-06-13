@@ -31,7 +31,7 @@ public class Exerc3 extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         weightText = new javax.swing.JTextField();
-        planets = new javax.swing.JComboBox<>();
+        planetsSelect = new javax.swing.JComboBox<>();
         jLabel3 = new javax.swing.JLabel();
         nameText = new javax.swing.JTextField();
         limpar = new javax.swing.JButton();
@@ -41,12 +41,12 @@ public class Exerc3 extends javax.swing.JFrame {
         setTitle("Seu Peso em Diferentes Planetas");
 
         jLabel1.setFont(new java.awt.Font("Yu Gothic", 1, 24)); // NOI18N
-        jLabel1.setText("Seu peso em diferentes planetas");
+        jLabel1.setText("Seu Peso em Diferentes Planetas");
 
         jLabel2.setText("Peso(kg)");
 
-        planets.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mercúrio", "Vênus", "Marte", "Júpiter", "Saturno", "Urano" }));
-        planets.setToolTipText("Escolha um planeta para poder pesar o seus kilos nele");
+        planetsSelect.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Mercúrio", "Vênus", "Marte", "Júpiter", "Saturno", "Urano" }));
+        planetsSelect.setToolTipText("Escolha um planeta para poder pesar o seus kilos nele");
 
         jLabel3.setText("Nome");
 
@@ -69,12 +69,12 @@ public class Exerc3 extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(50, Short.MAX_VALUE)
+                .addContainerGap(45, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                            .addComponent(planets, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(planetsSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGap(27, 27, 27)
                             .addComponent(limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
@@ -87,7 +87,7 @@ public class Exerc3 extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addComponent(weightText)
                                 .addComponent(nameText, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)))))
-                .addContainerGap(49, Short.MAX_VALUE))
+                .addContainerGap(45, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -104,7 +104,7 @@ public class Exerc3 extends javax.swing.JFrame {
                     .addComponent(weightText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(planets, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(planetsSelect, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(limpar)
                     .addComponent(calcular))
                 .addContainerGap(140, Short.MAX_VALUE))
@@ -115,13 +115,61 @@ public class Exerc3 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcularActionPerformed
-        if (nameText.getText().toString() == "") {
+        if (nameText.getText().intern() == "") {
             JOptionPane.showMessageDialog(null, "Digite o seu nome", "Erro", JOptionPane.WARNING_MESSAGE);
-        } else if (weightText.getText().toString() == "") {
+            nameText.requestFocus();
+        } else if (weightText.getText().intern() == "") {
             JOptionPane.showMessageDialog(null, "Digite o seu peso em Kg!!!", "Erro", JOptionPane.WARNING_MESSAGE);
+            weightText.requestFocus();
         } else {
             String name = nameText.getText();
-            Double weight =  Double.parseDouble(weightText.getText());
+            Float weight =  Float.parseFloat(weightText.getText());
+            Float result;
+            int planetSelected = planetsSelect.getSelectedIndex();
+            System.out.println(planetSelected);
+                if (planetSelected == 0) {
+                    result = (weight / 10) * 0.37f;
+                    JOptionPane.showMessageDialog(
+                            null, name + " o seu peso em " 
+                                        + planetsSelect.getSelectedItem() + " é de " + result + "Kg"
+                    );
+                }
+                else if (planetSelected == 1) {
+                    result = (weight / 10) * 0.88f;
+                    JOptionPane.showMessageDialog(
+                            null, name + " o seu peso em " 
+                                        + planetsSelect.getSelectedItem() + " é de " + result + "Kg"
+                    );
+                }
+                else if (planetSelected == 2) {
+                    result = (weight / 10) * 0.38f;
+                    JOptionPane.showMessageDialog(
+                            null, name + " o seu peso em " 
+                                        + planetsSelect.getSelectedItem() + " é de " + result + "Kg"
+                    );
+                }
+                else if (planetSelected == 3) {
+                    result = (weight / 10) * 2.64f;
+                    JOptionPane.showMessageDialog(
+                            null, name + " o seu peso em " 
+                                        + planetsSelect.getSelectedItem() + " é de " + result + "Kg"
+                    );
+                }
+                else if (planetSelected == 4) {
+                    result = (weight / 10) * 1.15f;
+                    JOptionPane.showMessageDialog(
+                            null, name + " o seu peso em " 
+                                        + planetsSelect.getSelectedItem() + " é de " + result + "Kg"
+                    );
+                }
+                else if (planetSelected == 5) {
+                    result = (weight / 10) * 1.17f;
+                    JOptionPane.showMessageDialog(
+                            null, name + " o seu peso em " 
+                                        + planetsSelect.getSelectedItem() + " é de " + result + "Kg"
+                    );
+                }
+                
         }
     }//GEN-LAST:event_calcularActionPerformed
 
@@ -174,7 +222,7 @@ public class Exerc3 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel3;
     private javax.swing.JButton limpar;
     private javax.swing.JTextField nameText;
-    private javax.swing.JComboBox<String> planets;
+    private javax.swing.JComboBox<String> planetsSelect;
     private javax.swing.JTextField weightText;
     // End of variables declaration//GEN-END:variables
 }
