@@ -1,3 +1,6 @@
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -213,7 +216,39 @@ public class Exerc4 extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void consultActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultActionPerformed
-        
+        if (nameText.getText().intern() == "") {
+            JOptionPane.showMessageDialog(null, "Digite o seu nome", 
+                    "Erro", JOptionPane.INFORMATION_MESSAGE
+            );
+        } 
+        else if (addresText.getText().intern() == "") {
+            JOptionPane.showMessageDialog(null, "Digite o seu endereço", 
+                    "Erro", JOptionPane.INFORMATION_MESSAGE
+            );
+        } 
+        else if (telText.getText().intern() == "") {
+            JOptionPane.showMessageDialog(null, "Digite o seu telefone", 
+                    "Erro", JOptionPane.INFORMATION_MESSAGE
+            );
+        } 
+        else if (cpfText.getText().intern() == "") {
+            JOptionPane.showMessageDialog(null, "Digite o seu CPF", 
+                    "Erro", JOptionPane.INFORMATION_MESSAGE
+            );
+        } 
+        else if (agenText.getText().intern() == "") {
+            JOptionPane.showMessageDialog(null, "Digite o código da agência", 
+                    "Erro", JOptionPane.INFORMATION_MESSAGE
+            );
+        } 
+        else if (countText.getText().intern() == "") {
+            JOptionPane.showMessageDialog(null, "Digite o seu número da conta", 
+                    "Erro", JOptionPane.INFORMATION_MESSAGE
+            );
+        } 
+        else {
+            
+        } 
     }//GEN-LAST:event_consultActionPerformed
 
     private void closeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_closeActionPerformed
