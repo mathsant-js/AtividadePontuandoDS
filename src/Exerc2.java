@@ -37,8 +37,10 @@ public class Exerc2 extends javax.swing.JFrame {
         cpfText = new javax.swing.JFormattedTextField();
         dateText = new javax.swing.JFormattedTextField();
         cadastrar = new javax.swing.JButton();
+        limpar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Cadastro de Dados");
 
         jLabel1.setText("CEP:");
 
@@ -73,9 +75,18 @@ public class Exerc2 extends javax.swing.JFrame {
         }
 
         cadastrar.setText("Cadastrar");
+        cadastrar.setToolTipText("Botão para armazenar os seus dados");
         cadastrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cadastrarActionPerformed(evt);
+            }
+        });
+
+        limpar.setText("Limpar");
+        limpar.setToolTipText("Botão para limpar os campos digitados");
+        limpar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                limparActionPerformed(evt);
             }
         });
 
@@ -85,8 +96,11 @@ public class Exerc2 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(cadastrar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(cadastrar)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
@@ -121,11 +135,14 @@ public class Exerc2 extends javax.swing.JFrame {
                     .addComponent(jLabel4)
                     .addComponent(dateText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(32, 32, 32)
-                .addComponent(cadastrar)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(cadastrar)
+                    .addComponent(limpar))
                 .addContainerGap(50, Short.MAX_VALUE))
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
@@ -138,8 +155,18 @@ public class Exerc2 extends javax.swing.JFrame {
                                             + "CEP: " + cep + "\n"
                                             + "Telefone: " + telephone + "\n"
                                             + "CPF: " + cpf + "\n"
-                                            + "Data: " + date);
+                                            + "Data: " + date, 
+                                "Cadastro de Dados", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_cadastrarActionPerformed
+
+    private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
+        cepText.setText(null);
+        telText.setText(null);
+        cpfText.setText(null);
+        dateText.setText(null);
+        
+        cepText.requestFocus();
+    }//GEN-LAST:event_limparActionPerformed
 
     /**
      * @param args the command line arguments
@@ -185,6 +212,7 @@ public class Exerc2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JButton limpar;
     private javax.swing.JFormattedTextField telText;
     // End of variables declaration//GEN-END:variables
 }
