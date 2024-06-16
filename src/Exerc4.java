@@ -268,8 +268,9 @@ public class Exerc4 extends javax.swing.JFrame {
                                                 + "\nCPF: " + cpf
                                                 + "\nCódigo da Agência: " + agenceNumber
                                                 + "\nNúmero da Conta: " + countNumber
-                                                + "\nTipo de Conta: " 
-                                                + "\nTipo de Conta: Conta Poupança");
+                                                + "\nTipo de Conta: Conta Poupança",
+                                             "Conta cadastrada com Sucesso!",
+                                        JOptionPane.INFORMATION_MESSAGE);
             }
             else {
                 JOptionPane.showMessageDialog(null, "Dados cadastrados com sucesso!"
@@ -279,8 +280,9 @@ public class Exerc4 extends javax.swing.JFrame {
                                                 + "\nCPF: " + cpf
                                                 + "\nCódigo da Agência: " + agenceNumber
                                                 + "\nNúmero da Conta: " + countNumber
-                                                + "\nTipo de Conta: "
-                                                + "\nTipo de Conta: Conta Corrente");
+                                                + "\nTipo de Conta: Conta Corrente",
+                                             "Conta cadastrada com Sucesso!",
+                                        JOptionPane.INFORMATION_MESSAGE);
             }
         } 
     }//GEN-LAST:event_consultActionPerformed

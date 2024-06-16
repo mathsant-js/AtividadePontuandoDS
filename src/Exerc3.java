@@ -118,17 +118,20 @@ public class Exerc3 extends javax.swing.JFrame {
 
     private void calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_calcularActionPerformed
         if (nameText.getText().intern() == "") {
-            JOptionPane.showMessageDialog(null, "Digite o seu nome", "Erro", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, 
+                    "Digite o seu nome", "Erro", 
+                    JOptionPane.WARNING_MESSAGE);
             nameText.requestFocus();
         } else if (weightText.getText().intern() == "") {
-            JOptionPane.showMessageDialog(null, "Digite o seu peso em Kg!!!", "Erro", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, 
+                    "Digite o seu peso em Kg!!!", "Erro", 
+                    JOptionPane.WARNING_MESSAGE);
             weightText.requestFocus();
         } else {
             String name = nameText.getText();
             Float weight =  Float.parseFloat(weightText.getText());
             Float result;
             int planetSelected = planetsSelect.getSelectedIndex();
-            System.out.println(planetSelected);
                 if (planetSelected == 0) {
                     result = (weight / 10) * 0.37f;
                     JOptionPane.showMessageDialog(
