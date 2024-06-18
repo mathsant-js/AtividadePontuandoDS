@@ -38,6 +38,11 @@ public class Exerc2 extends javax.swing.JFrame {
         dateText = new javax.swing.JFormattedTextField();
         cadastrar = new javax.swing.JButton();
         limpar = new javax.swing.JButton();
+        jLabel5 = new javax.swing.JLabel();
+        nameText = new javax.swing.JTextField();
+        label = new javax.swing.JLabel();
+        addressText = new javax.swing.JTextField();
+        exit = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Cadastro de Dados");
@@ -48,31 +53,35 @@ public class Exerc2 extends javax.swing.JFrame {
 
         jLabel3.setText("CPF:");
 
-        jLabel4.setText("Data:");
+        jLabel4.setText("Data Nasc:");
 
         try {
             cepText.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("#####-###")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        cepText.setToolTipText("Digite o seu CEP");
 
         try {
             telText.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("(##)#####-####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        telText.setToolTipText("Digite o seu número de telefone");
 
         try {
             cpfText.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("###.###.###-##")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        cpfText.setToolTipText("Digite o seu CPF");
 
         try {
             dateText.setFormatterFactory(new javax.swing.text.DefaultFormatterFactory(new javax.swing.text.MaskFormatter("##/##/####")));
         } catch (java.text.ParseException ex) {
             ex.printStackTrace();
         }
+        dateText.setToolTipText("Digite a sua data de nascimento");
 
         cadastrar.setText("Cadastrar");
         cadastrar.setToolTipText("Botão para armazenar os seus dados");
@@ -90,55 +99,93 @@ public class Exerc2 extends javax.swing.JFrame {
             }
         });
 
+        jLabel5.setText("Nome:");
+
+        nameText.setToolTipText("Digite o seu nome");
+
+        label.setText("Endereço");
+
+        addressText.setToolTipText("Digite o seu endereço");
+
+        exit.setText("Sair");
+        exit.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel5)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(cadastrar)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel3))
-                        .addGap(59, 59, 59)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(cepText, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(telText, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(cpfText, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(dateText, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(125, Short.MAX_VALUE))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel4)
+                                    .addComponent(label)
+                                    .addComponent(jLabel3))
+                                .addGap(54, 54, 54)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(cpfText, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                                    .addComponent(dateText, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                                    .addComponent(nameText)
+                                    .addComponent(addressText, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel1))
+                                    .addComponent(cadastrar))
+                                .addGap(27, 27, 27)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(telText)
+                                    .addComponent(cepText)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(21, 21, 21)
+                                        .addComponent(limpar, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(0, 30, Short.MAX_VALUE)))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(exit, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(cepText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(telText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel3)
                     .addComponent(cpfText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel5)
+                    .addComponent(nameText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel4)
                     .addComponent(dateText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(32, 32, 32)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(addressText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(cepText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(telText, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(cadastrar)
-                    .addComponent(limpar))
-                .addContainerGap(50, Short.MAX_VALUE))
+                    .addComponent(limpar)
+                    .addComponent(exit))
+                .addGap(21, 21, 21))
         );
 
         pack();
@@ -147,16 +194,40 @@ public class Exerc2 extends javax.swing.JFrame {
 
     private void cadastrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cadastrarActionPerformed
         String cep = cepText.getText();
+        String name = nameText.getText();
+        String address = addressText.getText();
         String telephone = telText.getText();
         String cpf = cpfText.getText();
         String date = dateText.getText();
         
-        JOptionPane.showMessageDialog(null, "Dados Cadastrados com sucesso!!!\n"
-                                            + "CEP: " + cep + "\n"
-                                            + "Telefone: " + telephone + "\n"
-                                            + "CPF: " + cpf + "\n"
-                                            + "Data: " + date, 
-                                "Cadastro de Dados", JOptionPane.INFORMATION_MESSAGE);
+        if (cep == "") {
+            JOptionPane.showMessageDialog(null, "Digite o seu CEP", "Erro", JOptionPane.WARNING_MESSAGE);
+        }
+        else if (name == "") {
+            JOptionPane.showMessageDialog(null, "Digite o seu nome", "Erro", JOptionPane.WARNING_MESSAGE);
+        }
+        else if (address == "") {
+            JOptionPane.showMessageDialog(null, "Digite o seu endereço", "Erro", JOptionPane.WARNING_MESSAGE);
+        }
+        else if (telephone == "") {
+            JOptionPane.showMessageDialog(null, "Digite o seu telefone", "Erro", JOptionPane.WARNING_MESSAGE);
+        }
+        else if (cpf == "") {
+            JOptionPane.showMessageDialog(null, "Digite o seu CPF", "Erro", JOptionPane.WARNING_MESSAGE);
+        }
+        else if (date == "") {
+            JOptionPane.showMessageDialog(null, "Digite a sua data de nascimento", "Erro", JOptionPane.WARNING_MESSAGE);
+        }
+        else {
+            JOptionPane.showMessageDialog(null, "Dados Cadastrados com sucesso!!!\n"
+                                                + "CPF: " + cpf + "\n"
+                                                + "Nome: " + name + "\n"
+                                                + "Data: " + date + "\n"
+                                                + "Endereço: " + address + "\n"
+                                                + "CEP: " + cep + "\n"
+                                                + "Telefone: " + telephone + "\n",
+                                    "Cadastro de Dados", JOptionPane.INFORMATION_MESSAGE);
+        }
     }//GEN-LAST:event_cadastrarActionPerformed
 
     private void limparActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_limparActionPerformed
@@ -167,6 +238,10 @@ public class Exerc2 extends javax.swing.JFrame {
         
         cepText.requestFocus();
     }//GEN-LAST:event_limparActionPerformed
+
+    private void exitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,15 +279,20 @@ public class Exerc2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTextField addressText;
     private javax.swing.JButton cadastrar;
     private javax.swing.JFormattedTextField cepText;
     private javax.swing.JFormattedTextField cpfText;
     private javax.swing.JFormattedTextField dateText;
+    private javax.swing.JButton exit;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel label;
     private javax.swing.JButton limpar;
+    private javax.swing.JTextField nameText;
     private javax.swing.JFormattedTextField telText;
     // End of variables declaration//GEN-END:variables
 }

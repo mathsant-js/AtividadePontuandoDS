@@ -139,8 +139,14 @@
       </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="n1">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Digite o primeiro n&#xfa;mero"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JTextField" name="n2">
+      <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Digite o segundo n&#xfa;mero"/>
+      </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="calcular">
       <Properties>
@@ -157,6 +163,7 @@
           <ComponentRef name="listSelects"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Subtra&#xe7;&#xe3;o (-)"/>
+        <Property name="toolTipText" type="java.lang.String" value="Subtrai os numeros digitados"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="somaSelect">
@@ -165,6 +172,7 @@
           <ComponentRef name="listSelects"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Soma (+)"/>
+        <Property name="toolTipText" type="java.lang.String" value="Soma os numeros digitados"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="mulSelect">
@@ -173,6 +181,7 @@
           <ComponentRef name="listSelects"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Multiplica&#xe7;&#xe3;o (*)"/>
+        <Property name="toolTipText" type="java.lang.String" value="Multiplica os numeros digitados"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="diviSelect">
@@ -181,6 +190,7 @@
           <ComponentRef name="listSelects"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Divis&#xe3;o (/)"/>
+        <Property name="toolTipText" type="java.lang.String" value="Divide os numeros digitados"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JRadioButton" name="resSelect">
@@ -189,6 +199,7 @@
           <ComponentRef name="listSelects"/>
         </Property>
         <Property name="text" type="java.lang.String" value="Resto (%)"/>
+        <Property name="toolTipText" type="java.lang.String" value="Calcula o resto dos numeros digitados"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabel3">
@@ -198,6 +209,7 @@
     </Component>
     <Component class="javax.swing.JTextField" name="resulText">
       <Properties>
+        <Property name="toolTipText" type="java.lang.String" value="Mostra o resultado do c&#xe1;lculo"/>
         <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>

@@ -50,6 +50,10 @@ public class Exerc1 extends javax.swing.JFrame {
 
         jLabel2.setText("N2");
 
+        n1.setToolTipText("Digite o primeiro número");
+
+        n2.setToolTipText("Digite o segundo número");
+
         calcular.setText("Calcular");
         calcular.setToolTipText("Calcula os números com a operação escolhida");
         calcular.addActionListener(new java.awt.event.ActionListener() {
@@ -60,21 +64,27 @@ public class Exerc1 extends javax.swing.JFrame {
 
         listSelects.add(subSelect);
         subSelect.setText("Subtração (-)");
+        subSelect.setToolTipText("Subtrai os numeros digitados");
 
         listSelects.add(somaSelect);
         somaSelect.setText("Soma (+)");
+        somaSelect.setToolTipText("Soma os numeros digitados");
 
         listSelects.add(mulSelect);
         mulSelect.setText("Multiplicação (*)");
+        mulSelect.setToolTipText("Multiplica os numeros digitados");
 
         listSelects.add(diviSelect);
         diviSelect.setText("Divisão (/)");
+        diviSelect.setToolTipText("Divide os numeros digitados");
 
         listSelects.add(resSelect);
         resSelect.setText("Resto (%)");
+        resSelect.setToolTipText("Calcula o resto dos numeros digitados");
 
         jLabel3.setText("Resultado");
 
+        resulText.setToolTipText("Mostra o resultado do cálculo");
         resulText.setEnabled(false);
 
         limpar.setText("Limpar");
@@ -172,6 +182,9 @@ public class Exerc1 extends javax.swing.JFrame {
         }
         else if (n2.getText().toString() == "") {
             JOptionPane.showMessageDialog(null, "Digite a 2a. Nota", "Erro", JOptionPane.WARNING_MESSAGE);
+        }
+        else if (listSelects.getSelection() == null) {
+            JOptionPane.showMessageDialog(null, "Nenhum cálculo foi selecionado", "Erro", JOptionPane.WARNING_MESSAGE);
         }
         else {
             double numero1 = Double.parseDouble(n1.getText());
